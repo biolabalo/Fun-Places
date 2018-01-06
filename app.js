@@ -17,9 +17,9 @@ var commentRoutes = require("./routes/comments"),
 
 
 
-mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
 //mongodb://yelpcampbiola:customer24@ds131697.mlab.com:31697/yelpcampbiola
-//mongoose.connect("mongodb://yelpcampbiola:customer24@ds131697.mlab.com:31697/yelpcampbiola");
+mongoose.connect("mongodb://yelpcampbiola:customer24@ds131697.mlab.com:31697/yelpcampbiola");
 
 app.use(bodyParser.urlencoded({extended: true}));
 // make usage of app.css file in public folder possibe
