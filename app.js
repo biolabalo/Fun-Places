@@ -59,7 +59,15 @@ app.use("/campgrounds/:id/comments", commentRoutes)
 
 //  start the  server
 
+//.listen(process.env.PORT || 5000)
+//
+//
+//app.listen( 5000 , function () {
+//console.log("YELP CAMP  SERVER  HAS STARTED at port 5000");
+//});
 
-app.listen( 5000 , function () {
+
+
+app.listen(process.env.PORT || 5000 , function () {
 console.log("YELP CAMP  SERVER  HAS STARTED at port 5000");
 });
