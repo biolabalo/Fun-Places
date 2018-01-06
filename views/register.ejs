@@ -1,0 +1,31 @@
+<% include ./partials/header %> 
+
+
+
+
+
+
+
+<div style =" width:30% ; margin: 25px auto">
+       
+    <div class = container>
+    <h1>Sign Up!</h1>
+    </div>
+<form action="/register" method="POST">
+ 
+<div class = "form-group animated bounceInLeft">
+     
+<input  class = "form-control"  type="text" name="username" placeholder="username">
+     
+ </div>
+
+ <div class = "form-group animated bounceInRight">
+ <input  class = "form-control" type="password" name="password" placeholder="password">
+      </div>  
+    
+<input type="submit" class="btn btn-success btn-lg" value="Sign Up">    
+    
+</form>
+    
+    
+    <% include ./partials/footer %> 

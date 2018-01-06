@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+
+
+
+
+
+<div class = "container";>
+    <div class = "row">
+<!--                note : the campground.name is unique bcos the campground was uniquely retrieved from the databse 2ru id -->
+      <!-- animate drop your comment About -->
+<div class = "animated slideInDown">
+            
+<h1 style = "text-align:center;">   Drop Your Comments About <%= campground.name %> </h1>
+    
+</div>
+<!-- animate form input -->
+<div class = "animated slideInUp">
+            
+            
+<div style =" width:30% ; margin: 25px auto">
+<form   action = "/campgrounds/<%= campground._id %>/comments"   method = "POST">
+<div class = "form-group">
+    
+<input class = "form-control" type = "text" name = "Comment[text]" placeholder= "Text">
+  
+ </div>
+    
+
+    
+    
+<div class = "form-group">
+<button class = "btn btn-lg btn-success btn-block" >Submit</button>
+</div>
+
+</form>
+    <a href = "/campgrounds"> Go back</a>
+</div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

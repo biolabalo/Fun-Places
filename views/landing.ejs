@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funplaces in 9ja</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        <link rel='shortcut icon' type='image/x-icon' href=' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlP7ySFO9JO3L330Y5r6PYTMYL1HgcEiA6QoW2JHrch1NeNdGb7A' /> 
+         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    </head>
+    <body>
+
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+
+    <div id="landing-header">
+        <h1>Welcome to Fun-finder! 9ja</h1>
+<a href="/campgrounds" class="btn btn-lg btn-success">View Popular Fun-Places in 9ja</a>
+    </div>
+
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<% include partials/footer %>

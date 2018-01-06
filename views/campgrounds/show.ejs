@@ -1,0 +1,104 @@
+
+<% include ../partials/header%>
+
+<div class = "container">   
+
+    <div class = "row"> 
+    <div class = "col-md-3">
+        <P class = "lead"> Fun Places in 9ja</P>
+      <div class="panel-group  animated slideInDown"> 
+    <div class="panel panel-primary">
+      <div class="panel-heading"><strong><%= campground.name%></strong>
+        </div>
+      <div class="panel-body"> 
+           <strong>
+            state :
+          </strong>
+          <br>
+          <strong>
+            Website :
+          </strong>
+          
+        </div>
+    </div>
+ </div> 
+</div>
+        
+        <!---------------  -------------->
+ <div class = "col-md-9   animated zoomInUp">   
+     
+     <!--- image ,name ,price section  ---->
+     <div class = "thumbnail">
+     <img class = "img-responsive"  src = "<%= campground.image%>">
+     <div  class = "caption-full">
+         
+         <h4 class=" pull-right">Entry-Fee : #700</h4>
+         <br>
+         <h4 >
+            <a><%= campground.name%></a>
+        </h4>
+         <!-- the campground.description  is inside a div bcos it's jumping up and also bcos of google font -->
+         
+         <div class = "googlefont"> 
+         <p><%= campground.description %></p>
+         <p>
+    <em> Submitted By : <%= campground.author.username  %></em> 
+         </p> 
+             
+<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>  <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>         
+             
+         <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>      
+               <% } %>
+             
+             
+             
+             
+             
+             
+         </div>
+          </div> 
+      </div>
+      <!---000 comment section 000 ---->
+       <div class = "well">
+       <div class = "text-right">
+  <a  class = "btn btn-success"  href = "/campgrounds/<%=campground._id%>/comments/new"> Add a new comment   </a>         
+           
+        </div> 
+        <hr>   
+           <!-- loops 2ru comment -->
+<% campground.comments.forEach(function(comment){ %> 
+ <div class = 'row'>
+    <div class = "col-md-12">  
+          <strong>   <%= comment.author.username %>  </strong>
+          <span class ="pull-right">2 days Ago </span>
+          <p>
+           <%= comment.text %>
+          </p>
+        
+     <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+     <a class="btn btn-xs btn-warning" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
+     <form class="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+    </form>
+                        <% } %>
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+<% }) %>
+     <!-- end of  loops 2ru comment -->
+       </div>
+     
+      <!---000 end of comment section  000 ---->
+   </div>     
+ </div>
+</div>
+
+
+<% include ../partials/footer%>

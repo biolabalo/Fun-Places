@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>     
+ <link rel ="stylesheet" href =https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    
+   
+    
+    
+ <title>Fun Places in Naija </title>   
+    <link rel='shortcut icon' type='image/x-icon' href=' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlP7ySFO9JO3L330Y5r6PYTMYL1HgcEiA6QoW2JHrch1NeNdGb7A' />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <!--    animate.css-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    
+</head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- the essense of this br is to create good space between the  fixed nav bar and jumbotron-->
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
+  
+                
+        
+        
+        
+        <nav class="navbar navbar-default navbar-fixed-top" style = "box-shadow: 0 3px 2px #777; color:white;  background-color:#CDDC39; ">
+<div class="container-fluid">
+ <div class="navbar-header">
+                                
+ <a class="navbar-brand" href="/">FunSpots</a>
+                </div>
+                    
+ <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav navbar-right nav">
+
+<% if(!currentUser){ %>
+<li><a href="/login">Login</a></li>
+<li> <a href="/register">Sign Up</a></li>
+<% } else { %>
+        <li> <a >Signed in As <strong> <%= currentUser.username %></strong> </a> </li>
+<li><a href="/logout">LogOut</a> </li>
+        <% }  %>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+ <div class="container">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+
+
+   

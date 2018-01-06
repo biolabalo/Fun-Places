@@ -1,0 +1,42 @@
+<% include ../partials/header%>
+
+
+<div class = "container">
+<header class = "jumbotron  animated slideInDown" style="background-color:#A0DE07; color:white;">
+  <div class = "container  animated slideInLeft">
+<h1> Fun Spots in  Nigeria </h1>
+<p> View our handpicked Funspots from all over the country</p>
+
+<p>
+<a class="btn btn-success btn-md"href = "/campgrounds/new">Add a new fun spot?</a>
+</p>
+    </div>     
+</header>
+
+<div class = "row text-center animated slideInUp"  style = "display:flex; flex-wrap: wrap ;">
+  
+          <!-- the "campgrounds" used  below comes from  " { campgrounds: allCampgrounds});" unda  app.get("/campgrounds") -->
+    
+<% for(var i= 0 ; i < campgrounds.length; i++){%>
+  <div class = "col-md-4  col-sm-6">
+  <div class = "thumbnail saclebox"  style = "box-shadow: 0 3px 2px #777">   
+      <img src="<%= campgrounds[i].image%>">
+      <div class = "caption">
+       <h4><%= campgrounds[i].name%></h4>
+      </div>
+      <p>  
+ <a href = "/campgrounds/<%= campgrounds[i]._id %>"  class= "btn btn-primary"> More Info</a>
+      </p>
+      </div> 
+      
+      
+
+
+  </div> 
+
+<%}%>
+    </div>
+  </div>      
+<% include ../partials/footer%>
+
+        
